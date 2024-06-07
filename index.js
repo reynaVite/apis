@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
   app.get('/consultarActividades', async (req, res) => {
     let connection;
     try {
-      const query = 'SELECT * FROM actividades';
+      const query = 'SELECT * FROM agenda';
       connection = await req.mysqlPool.getConnection();
       const [results] = await connection.execute(query);
       res.json(results);
